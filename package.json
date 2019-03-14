@@ -1,0 +1,19 @@
+{
+  "name": "fonctionalobject",
+  "version": "1.0.0",
+  "description": "Adds fonctional methods on the objects and some useful methods on objects and arrays.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nyc mocha test/*.js"
+  },
+  "keywords": [
+    "fonctional",
+    "object",
+    "array"
+  ],
+  "author": "Maxime Cauz",
+  "license": "ISC"
+}
