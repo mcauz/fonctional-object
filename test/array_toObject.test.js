@@ -25,7 +25,17 @@ describe("array_toObject", () => {
         const obj = arr.toObject(keyFct, valueFct);
 
         if (typeof obj !== "object" || obj["key-0"] !== "0-10" || obj["key-1"] !== "1-test" || Object.keys(obj).length !== 2)
-            throw Error("The object "+JSON.stringify(obj)+" must be "+JSON.stringify(arr));
+            throw Error("The object "+JSON.stringify(obj)+" must be "+JSON.stringify({"key-0": "0-10", "key-1": "1-test"}));
+
+    });
+
+    it("Default parameter", () => {
+
+        const arr = [10, "test"];
+        const obj = arr.toObject(keyFct);
+
+        if (typeof obj !== "object" || obj["key-0"] !== 10 || obj["key-1"] !== "test" || Object.keys(obj).length !== 2)
+            throw Error("The object "+JSON.stringify(obj)+" must be "+JSON.stringify({"key-0": 10, "key-1": "test"}));
 
     });
 

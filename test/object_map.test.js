@@ -30,6 +30,16 @@ describe("object_every", () => {
 
     });
 
+    it("Default parameter", () => {
+
+        const obj = {"a1": "test", "a2": "hello"};
+        const map = obj.map(valueFct);
+
+        if (map.a1 !== "a1" || map.a2 !== "a2" || Object.keys(map).length !== 2)
+            throw Error("The expected result is "+JSON.stringify({a1: "a1", a2: "a2"})+" and not "+JSON.stringify(map));
+
+    });
+
     it("Writable", () => {
 
         const obj = {};

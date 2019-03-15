@@ -4,6 +4,7 @@
 
 This module adds functional methods and some useful methods on objects and arrays.
 Each function can be rewritten so as not to block any other library.
+It is also important to indicate that no method uses another method defined by this library other than itself.
 
 ## Installing
 
@@ -65,14 +66,14 @@ Returns : **Array**
 
 ### toObject
 
-    Array.prototype.toObject (key, value)
+    Array.prototype.toObject (key[, value])
 
 Transforms the array into an object.
 
 Params :
 
 - **key (entryCallbackArray)** - A callback that give the key.
-- **value (entryCallbackArray)** - A callback that give the value.
+- **value (entryCallbackArray) [optional]** - A callback that give the value. The default value return simply the value of the entry.
 
 Returns : **Object**
 
@@ -146,14 +147,14 @@ Gets the number of element in the object. It's not a function.
 
 ### map
 
-    Object.prototype.map (value, key)
+    Object.prototype.map (value[, key])
 
 Create a new object from this object.
 
 Params :
 
 - **value (entryCallbackObject)** - The callback for the key.
-- **key (entryCallbackObject)** - The callback for the key.
+- **key (entryCallbackObject) [optional]** - The callback for the key. The default value return simply the key of the entry.
 
 Returns : **Object**
 
