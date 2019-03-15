@@ -58,7 +58,14 @@ Params :
 
 ### clone
 
-    Array.prototype.clone ()
+    const array = [10, "test"];
+    const clone = array.clone ();
+
+    array[0] = 20;
+
+    // Value of array and clone at this point :
+    // array : [20, "test"]
+    // clone : [10, "test"]
 
 Create a deep clone of the array.
 
@@ -66,7 +73,11 @@ Returns : **Array**
 
 ### toObject
 
-    Array.prototype.toObject (key[, value])
+    const key = (v) => v;
+    const value = (v, k) => k;
+
+    const array = [10, "test"];
+    const object = array.toObject(key, value) // {"10": 0, "test": 1}
 
 Transforms the array into an object.
 
@@ -81,7 +92,14 @@ Returns : **Object**
 
 ### clone
 
-    Object.prototype.clone ()
+    const object = {test: 10};
+    const clone = object.clone();
+
+    object.test = "hello";
+
+    // The value of object and clone at this point :
+    // object : {test: "hello"}
+    // clone : {test: 10}
 
 Create a deep clone of the object.
 
@@ -89,7 +107,9 @@ Returns : **Object**
 
 ### every
 
-    Object.prototype.every (callback)
+    const object = {test: 10, hello: 20};
+    const success = object.every((value) => value >= 10); // True
+    const failure = object.every((value) => value >= 20); // False
 
 Check if each entry of an object respect a callback.
 
@@ -101,7 +121,9 @@ Returns : **Boolean**
 
 ### find
 
-    Object.prototype.find (key)
+    const object = {test: {hello: 10}};
+    const num = object.find("test.hello"); // 10
+    const und = object.find("test.good"); // Undefined
 
 Finds an element in the object. Use a dot for the recursion.
 
@@ -113,7 +135,11 @@ Returns : *
 
 ### forEach
 
-    Object.prototype.forEach (callback)
+    const num = 0;
+    const object = {test: 10, hello: 20};
+
+    object.forEach((value, key) => num += value + key.length);
+    // At this point, num = 39
 
 Execute a callback on each entry of the object.
 
@@ -123,7 +149,9 @@ Params :
 
 ### has
 
-    Object.prototype.has (key)
+    const object = {test: {hello: 10}};
+    const num = object.find("test.hello"); // True
+    const und = object.find("test.good"); // False
 
 Check the existence of an element in the object. Use a dot for the recursion.
 
@@ -135,19 +163,31 @@ Returns : **Boolean**
 
 ### isEmpty
 
-    Object.prototype.isEmpty
+    const object_1 = {};
+    const object_2 = {test: 10};
+
+    object_1.isEmpty // True
+    object_2.isEmpty // False
 
 Indicates if the object is empty or not. It's not a function.
 
 ### length
 
-    Object.prototype.length
+    const object_1 = {};
+    const object_2 = {test: 10};
+
+    object_1.length // 0
+    object_2.length // 1
 
 Gets the number of element in the object. It's not a function.
 
 ### map
 
-    Object.prototype.map (value[, key])
+    const key = (value) => value;
+    const value = (value, key) => key;
+
+    const object = {test: "t", hello: "h"};
+    const obj = object.map(value, key); // {t: "test", h: "hello"}
 
 Create a new object from this object.
 
@@ -160,7 +200,9 @@ Returns : **Object**
 
 ### some
 
-    Object.prototype.some (callback)
+    const object = {test: 10, hello: 20};
+    const success = object.some((value) => value >= 20); // True
+    const failure = object.some((value) => value >= 30); // False
 
 Check if at least one entry of an object respect a callback.
 
