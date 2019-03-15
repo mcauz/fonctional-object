@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/mcauz/fonctional-object/branch/master/graph/badge.svg)](https://codecov.io/gh/mcauz/fonctional-object)
+
 # Fonctional Object
 
 This module adds functional methods and some useful methods on objects and arrays.
