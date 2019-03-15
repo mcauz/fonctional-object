@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test nyc mocha test/*.js",
-    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "report-coverage": "codecov --token=78dfeb5c-fff5-4805-905b-2b482c853164"
   },
   "keywords": [
     "fonctional",
