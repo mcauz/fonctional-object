@@ -1,6 +1,7 @@
 # Fonctional Object
 
 This module adds functional methods and some useful methods on objects and arrays.
+Each function can be rewritten so as not to block any other library.
 
 ## Installing
 
@@ -143,14 +144,14 @@ Gets the number of element in the object. It's not a function.
 
 ### map
 
-    Object.prototype.map (key, value)
+    Object.prototype.map (value, key)
 
 Create a new object from this object.
 
 Params :
 
-- **key (entryCallbackObject)** - The callback for the key.
 - **value (entryCallbackObject)** - The callback for the key.
+- **key (entryCallbackObject)** - The callback for the key.
 
 Returns : **Object**
 

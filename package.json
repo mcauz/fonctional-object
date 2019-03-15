@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "nyc mocha test/*.js"
+    "test": "cross-env NODE_ENV=test nyc mocha test/*.js"
   },
   "keywords": [
     "fonctional",
@@ -22,5 +22,26 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mcauz/fonctional-object.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/register": "^7.0.0",
+    "babel-plugin-istanbul": "^5.1.1",
+    "codecov": "^3.2.0",
+    "cross-env": "^5.2.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0"
+  },
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "sourceMap": false,
+    "instrument": false,
+    "reporter": [
+      "html",
+      "text",
+      "text-lcov"
+    ]
   }
 }
