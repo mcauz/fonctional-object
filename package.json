@@ -1,13 +1,14 @@
 {
   "name": "fonctional-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds fonctional methods on the objects and some useful methods on objects and arrays.",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test nyc mocha test/*.js"
+    "test": "cross-env NODE_ENV=test nyc mocha test/*.js",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "keywords": [
     "fonctional",
@@ -40,8 +41,7 @@
     "instrument": false,
     "reporter": [
       "html",
-      "text",
-      "text-lcov"
+      "text"
     ]
   }
 }
