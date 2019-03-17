@@ -1,6 +1,6 @@
 {
   "name": "fonctional-object",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Adds fonctional methods on the objects and some useful methods on objects and arrays.",
   "main": "index.js",
   "directories": {

@@ -43,4 +43,12 @@ describe("object_every", () => {
 
     });
 
+    it("Check this params", () => {
+
+        ({}).every(() => {
+            if (this !== 20) throw Error("Invalid this for the callback. Expected: 20. Actual: "+this);
+        }, 20);
+
+    });
+
 });

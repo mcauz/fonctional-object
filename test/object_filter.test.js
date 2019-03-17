@@ -3,38 +3,42 @@
 require("../lib/object");
 const integrity = require("./utils/integrity");
 
-describe("object_every", () => {
+describe("object_filter", () => {
+
+    function test (value, key) {
+
+        return typeof value === "number" && key.indexOf("a") === 0;
+
+    }
 
     it("Params of arguments", () => {
 
         const obj = {test: 10};
-        obj.forEach((value, key, o) => {
+        obj.every((value, key, o) => {
             if (value !== 10 || key !== "test" || !integrity(obj, o)) throw Error("Invalid arguments for the callback.");
         });
 
     });
 
-    it("Check the result", () => {
+    it("One correct object", () => {
 
-        const obj = {"a1": 10, "a2": 20};
-        const copy = {};
+        const obj = {"a1": 10, "b2": 20};
+        const res = obj.filter(test);
 
-        obj.forEach((value, key) => copy[key] = value);
-
-        if (copy.a1 !== 10 || copy.a2 !== 20) throw Error("The callback doesn't work.");
+        if (Object.keys(res).length !== 1 || res["a1"] !== 10) throw Error("The expected response is {a1: 10} and not "+JSON.stringify(res));
 
     });
 
     it("Writable", () => {
 
         const obj = {};
-        obj.forEach = 10;
+        obj.filter = 10;
 
     });
 
     it("Check this params", () => {
 
-        ({}).forEach(() => {
+        ({}).filter(() => {
             if (this !== 20) throw Error("Invalid this for the callback. Expected: 20. Actual: "+this);
         }, 20);
 

@@ -47,4 +47,14 @@ describe("object_every", () => {
 
     });
 
+    it("Check this params", () => {
+
+        ({}).map(() => {
+            if (this !== 20) throw Error("Invalid this for the value callback. Expected: 20. Actual: "+this);
+        },() => {
+            if (this !== 40) throw Error("Invalid this for the key callback. Expected: 40. Actual: "+this);
+        }, 20, 40);
+
+    });
+
 });

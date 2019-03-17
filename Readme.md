@@ -24,6 +24,7 @@ The methods are directly added to the prototypes of Object and Array.
 - [Array.prototype.toObject](#toObject)
 - [Object.prototype.clone](#clone)
 - [Object.prototype.every](#every)
+- [Object.prototype.filter](#filter)
 - [Object.prototype.find](#find)
 - [Object.prototype.forEach](#forEach)
 - [Object.prototype.has](#has)
@@ -116,6 +117,7 @@ Check if each entry of an object respect a callback.
 Params :
 
 - **callback (entryCallbackObject)** - The callback for each entry of the object.
+- **thisArg [Optional]** - The value for this in the callback.
 
 Returns : **Boolean**
 
@@ -146,6 +148,7 @@ Execute a callback on each entry of the object.
 Params :
 
 - **callback (entryCallbackObject)** - The callback for each entry of the object.
+- **thisArg [Optional]** - The value for this in the callback.
 
 ### has
 
@@ -195,6 +198,8 @@ Params :
 
 - **value (entryCallbackObject)** - The callback for the key.
 - **key (entryCallbackObject) [optional]** - The callback for the key. The default value return simply the key of the entry.
+- **thisArgValue [Optional]** - The value for this in the value callback.
+- **thisArgKey [Optional]** - The value for this in the key callback.
 
 Returns : **Object**
 
@@ -209,8 +214,15 @@ Check if at least one entry of an object respect a callback.
 Params :
 
 - **callback (entryCallbackObject)** - The callback for each entry of the object.
+- **thisArg [Optional]** - The value for this in the callback.
 
 Returns : **Boolean**
+
+## Versions
+
+### 1.1.0
+
+This version defines the filter method for objects as well as the possibility to specify a value for this for every, some, map, forEach and filter methods.
 
 ## License
 

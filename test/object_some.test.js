@@ -43,4 +43,12 @@ describe("object_some", () => {
 
     });
 
+    it("Check this params", () => {
+
+        ({}).some(() => {
+            if (this !== 20) throw Error("Invalid this for the callback. Expected: 20. Actual: "+this);
+        }, 20);
+
+    });
+
 });
